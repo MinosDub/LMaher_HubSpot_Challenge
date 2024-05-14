@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+<body>
+    <div class="container">
+    <h1>Authorization Successful!</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="authorization_code" value="{{ authorization_code }}">
+        <button type="submit" class="button">Retrieve Latest Customer Record</button>
+    </form>
+    </div>
+</body>
+</html>
